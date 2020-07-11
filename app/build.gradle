@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: "kotlin-kapt"
+apply plugin: 'com.google.gms.google-services'
 android {
     compileSdkVersion 29
 
@@ -89,6 +90,13 @@ dependencies {
 
     //stetho
     implementation 'com.facebook.stetho:stetho:1.5.1'
+
+    // Firebase Authentication
+    implementation 'com.google.firebase:firebase-auth:19.2.0'
+    // Firestore for online database
+    implementation 'com.google.firebase:firebase-firestore:21.4.0'
+    // coroutines support for firebase operations
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.1.1'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

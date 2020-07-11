@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import com.google.firebase.firestore.FirebaseFirestore
 import dagger.android.support.DaggerFragment
 import kotlinx.android.synthetic.main.classic_menu_fragment.*
 import sp.smart.smartpub.R
@@ -15,9 +16,12 @@ import sp.smart.smartpub.databinding.ClassicMenuFragmentBinding
 import sp.smart.smartpub.viewmodel.ViewModelProviderFactory
 import javax.inject.Inject
 
+
 class ClassicMenu : DaggerFragment() {
 
     private lateinit var binding: ClassicMenuFragmentBinding
+
+    val TAG = "NOPE"
 
     @Inject
     lateinit var viewModelProviderFactory: ViewModelProviderFactory
@@ -43,6 +47,7 @@ class ClassicMenu : DaggerFragment() {
             classicMenuViewModel.category.set(item)
         }
 
+        initFirestore()
 
         classicMenuViewModel.coursesState.observe(this, Observer {
             if (it == null) return@Observer
@@ -54,6 +59,31 @@ class ClassicMenu : DaggerFragment() {
             }
         })
 
+    }
+
+    private fun initFirestore() {
+        val db = FirebaseFirestore.getInstance()
+
+        // Create a new user with a first and last name
+
+        // Create a new user with a first and last name
+        val user: MutableMap<String, Any> = HashMap()
+        user["first"] = "Ada"
+        user["last"] = "Lovelace"
+        user["born"] = 1815
+
+// Add a new document with a generated ID
+
+// Add a new document with a generated ID
+        db.collection("users")
+            .add(user)
+            .addOnSuccessListener { documentReference ->
+                Log.d(
+                    TAG,
+                    "DocumentSnapshot added with ID: " + documentReference.id
+                )
+            }
+            .addOnFailureListener { e -> Log.w(TAG, "Error adding document", e) }
     }
 
 }

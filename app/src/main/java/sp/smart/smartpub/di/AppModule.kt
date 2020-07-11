@@ -20,7 +20,7 @@ class AppModule {
         return Room.databaseBuilder(
             app as Context, SmartDatabase::class.java,"smart.db"
         )
-            .fallbackToDestructiveMigrationOnDowngrade()
+            .fallbackToDestructiveMigration()
             .build()
     }
 

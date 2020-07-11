@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "804684140255",
+    "firebase_url": "https://smartpub-afeb8.firebaseio.com",
+    "project_id": "smartpub-afeb8",
+    "storage_bucket": "smartpub-afeb8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:804684140255:android:0f55f9bd44f920c31ce36a",
+        "android_client_info": {
+          "package_name": "sp.smart.smartpub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "804684140255-sir6q6fkbossaj8vh6o29206eh3oj04i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "sp.smart.smartpub",
+            "certificate_hash": "ee1022b5cde2113fb17f8865952cf7af21960331"
+          }
+        },
+        {
+          "client_id": "804684140255-bi334ob25qpjinvusgnkv5s0a7cp9odq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDk4yD6HDWKxvUAPH_jqc3fud83v_hj3E4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "804684140255-bi334ob25qpjinvusgnkv5s0a7cp9odq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
