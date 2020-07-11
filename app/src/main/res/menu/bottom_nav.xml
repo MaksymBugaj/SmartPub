@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/appetizersFragment"
+        android:icon="@drawable/fastfood"
+        android:title="Appetizers" />
+
+    <item
+        android:id="@+id/soupsFragment"
+        android:icon="@drawable/whatshot_24px"
+        android:title="Soups" />
+
+    <item
+        android:id="@+id/horizontalFragment"
+        android:icon="@drawable/menu_book"
+        android:title="Horizontal" />
+
+    <item
+        android:id="@+id/fishFragment"
+        android:icon="@drawable/favorite_border_24px"
+        android:title="Fishes" />
+
+    <!--<item
+    android:id="@+id/drinksFragment"
+    android:icon="@drawable/drink"
+    android:title="Drinks" />-->
+
+    <item
+        android:id="@+id/allFragment"
+        android:icon="@drawable/all_courses"
+        android:title="All" />
+</menu>

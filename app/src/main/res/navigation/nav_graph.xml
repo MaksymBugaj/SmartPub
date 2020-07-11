@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/horizontalFragment">
+
+
+    <fragment
+        android:id="@+id/classicMenu"
+        android:name="sp.smart.smartpub.ui.menu.classic.ClassicMenu"
+        android:label="classic_menu_fragment"
+        tools:layout="@layout/classic_menu_fragment" />
+    <fragment
+        android:id="@+id/tablePicker"
+        android:name="sp.smart.smartpub.ui.tablepicker.TablePicker"
+        android:label="table_picker_fragment"
+        tools:layout="@layout/table_picker_fragment" />
+    <fragment
+        android:id="@+id/appetizersFragment"
+        android:name="sp.smart.smartpub.ui.menu.classic.appetizers.AppetizersFragment"
+        android:label="appetizers_fragment"
+        tools:layout="@layout/appetizers_fragment" />
+    <fragment
+        android:id="@+id/drinksFragment"
+        android:name="sp.smart.smartpub.ui.menu.classic.drinks.DrinksFragment"
+        android:label="drinks_fragment"
+        tools:layout="@layout/drinks_fragment" />
+    <fragment
+        android:id="@+id/fishFragment"
+        android:name="sp.smart.smartpub.ui.menu.classic.fishes.FishFragment"
+        android:label="fish_fragment"
+        tools:layout="@layout/fish_fragment" />
+    <fragment
+        android:id="@+id/mainCoursesFragment"
+        android:name="sp.smart.smartpub.ui.menu.classic.maincourses.MainCoursesFragment"
+        android:label="main_courses_fragment"
+        tools:layout="@layout/main_courses_fragment" />
+    <fragment
+        android:id="@+id/soupsFragment"
+        android:name="sp.smart.smartpub.ui.menu.classic.soups.SoupsFragment"
+        android:label="soups_fragment"
+        tools:layout="@layout/soups_fragment" />
+    <fragment
+        android:id="@+id/allFragment"
+        android:name="sp.smart.smartpub.ui.menu.classic.all.AllFragment"
+        android:label="all_fragment"
+        tools:layout="@layout/all_fragment" />
+    <fragment
+        android:id="@+id/horizontalFragment"
+        android:name="sp.smart.smartpub.ui.menu.classic.horizontalscrollviews.HorizontalFragment"
+        android:label="HorizontalFragment" />
+</navigation>

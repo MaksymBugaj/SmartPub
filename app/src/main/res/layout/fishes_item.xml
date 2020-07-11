@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fish_item_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fishCourseItem_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/fishCourseItem_topImage"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/fish"
+            android:fitsSystemWindows="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/fishCourseItem_Image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fishCourseItem_topImage">
+
+
+            <TextView
+                android:id="@+id/fishCourseItem_itemName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textSize="22sp"
+                tools:text="Activity" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fishCourseItemLayout_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="Price:"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/fishCourseItem_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@id/fishCourseItem_description"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Some comment" />
+
+
+                <TextView
+                    android:id="@+id/fishCourseItemLayout_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="Description"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@id/fishCourseItemLayout_price"
+                    app:layout_constraintTop_toBottomOf="@id/fishCourseItemLayout_price" />
+
+                <TextView
+                    android:id="@+id/fishCourseItem_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@id/fishCourseItemLayout_description"
+                    app:layout_constraintTop_toBottomOf="@id/fishCourseItem_price"
+                    tools:text="Some comment" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/fishCourseItem_Image"
+            style="@style/ButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/favorite_border_24px"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fishCourseItem_topImage" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>
+
+    <!--
+    <View
+            android:id="@+id/homeActItem_topBarrier"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@drawable/item_background_shape"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/homeActItem_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/homeActItem_bottomBarrier"
+            app:layout_constraintEnd_toStartOf="@id/homeActItem_rightBarrier"
+            app:layout_constraintStart_toEndOf="@id/homeActItem_leftBarrier"
+            app:layout_constraintTop_toBottomOf="@+id/homeActItem_topBarrier">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/homeActItem_button">
+
+
+                <TextView
+                    android:id="@+id/homeActItem_itemName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:textSize="22sp"
+                    tools:text="Activity" />
+
+                <TextView
+                    android:id="@+id/homeActItem_itemStartDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                    android:textSize="14sp"
+                    tools:text="Some comment" />
+
+
+                <TextView
+                    android:id="@+id/homeActItem_itemEndDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                    android:textSize="14sp"
+                    tools:text="Some comment" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/homeActItem_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/round_button_top_right"
+                android:text="minus"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/homeActItem_bottomBarrier"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@android:color/holo_blue_dark"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="5dp"/>
+
+        <View
+            android:id="@+id/homeActItem_rightBarrier"
+            android:layout_width="3dp"
+            android:layout_height="0dp"
+            android:background="@android:color/holo_blue_dark"
+            app:layout_constraintBottom_toBottomOf="@id/homeActItem_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/homeActItem_layout" />
+
+        <View
+            android:id="@+id/homeActItem_leftBarrier"
+            android:layout_width="3dp"
+            android:layout_height="0dp"
+            android:background="@android:color/holo_blue_dark"
+            app:layout_constraintBottom_toBottomOf="@id/homeActItem_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/homeActItem_layout" />
+    -->

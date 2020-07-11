@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="sp.smart.smartpub.ui.menu.classic.horizontalscrollviews.HorizontalViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/whiteish"
+        android:orientation="vertical"
+        tools:context=".ui.menu.classic.drinks.DrinksFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragmentContainer_Appetizers"
+                android:name="sp.smart.smartpub.ui.menu.classic.appetizers.AppetizersFragment"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragmentContainer_soups"
+                android:name="sp.smart.smartpub.ui.menu.classic.soups.SoupsFragment"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragmentContainer_Appetizers" />
+
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragmentContainer_mainCourses"
+                android:name="sp.smart.smartpub.ui.menu.classic.maincourses.MainCoursesFragment"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragmentContainer_soups" />
+
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragmentContainer_fishes"
+                android:name="sp.smart.smartpub.ui.menu.classic.fishes.FishFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragmentContainer_mainCourses" />
+
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/horizontalFragment_drinks"
+                android:name="sp.smart.smartpub.ui.menu.classic.drinks.DrinksFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragmentContainer_fishes" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>
