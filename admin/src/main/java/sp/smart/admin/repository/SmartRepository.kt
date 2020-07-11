@@ -1,10 +1,7 @@
-package sp.smart.smartpub.data.repository
+package sp.smart.admin.repository
 
 import androidx.lifecycle.LiveData
-import com.google.firebase.firestore.DocumentSnapshot
-import com.google.firebase.firestore.QuerySnapshot
-import sp.smart.smartpub.data.db.entity.Category
-import sp.smart.smartpub.data.db.entity.Course
+import sp.smart.admin.db.entity.Course
 
 interface SmartRepository {
 
@@ -17,6 +14,8 @@ interface SmartRepository {
     suspend fun getAllCourses(): List<Course>
 
     suspend fun deleteCourse(course: Course)
+
+    suspend fun saveDataInFirestore(course: Course): Boolean
 
     suspend fun fetchDataFromServer(): Boolean
 }

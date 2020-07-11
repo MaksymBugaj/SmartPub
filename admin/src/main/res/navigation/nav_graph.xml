@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/allCoursesFragment">
+
+    <fragment
+        android:id="@+id/allCoursesFragment"
+        android:name="sp.smart.admin.ui.all.AllCoursesFragment"
+        android:label="all_fragment"
+        tools:layout="@layout/all_fragment" />
+    <fragment
+        android:id="@+id/addCourseFragment"
+        android:name="sp.smart.admin.ui.add.AddCourseFragment"
+        android:label="AddCourseFragment" />
+</navigation>

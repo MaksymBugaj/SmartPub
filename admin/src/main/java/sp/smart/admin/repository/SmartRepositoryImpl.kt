@@ -1,4 +1,4 @@
-package sp.smart.smartpub.data.repository
+package sp.smart.admin.repository
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -7,9 +7,8 @@ import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.tasks.await
-import sp.smart.smartpub.data.db.CourseDao
-import sp.smart.smartpub.data.db.entity.Course
-import sp.smart.smartpub.data.repository.SmartRepository
+import sp.smart.admin.db.CourseDao
+import sp.smart.admin.db.entity.Course
 
 class SmartRepositoryImpl(
     private val courseDao: CourseDao,
@@ -36,11 +35,14 @@ class SmartRepositoryImpl(
         courseDao.delete(course)
     }
 
+    override suspend fun saveDataInFirestore(course: Course): Boolean {
+        return firebaseRepository.saveDataInFirestore(course)
+    }
+
     override suspend fun fetchDataFromServer(): Boolean {
         return try {
             val dataFromServer =  firebaseRepository.getDataFromFirestore()
             if(dataFromServer != null) {
-                clearDatabase()
                 for (course in dataFromServer){
                     insertCourseFromServer(course)
                 }
@@ -50,10 +52,6 @@ class SmartRepositoryImpl(
             Log.d("NOPE","There is a problem in fetch")
             false
         }
-    }
-
-    private fun clearDatabase(){
-        courseDao.dropCourseTable()
     }
 
     private fun insertCourseFromServer(course: Course){

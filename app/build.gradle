@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "sp.smart.smartpub"
-        minSdkVersion 24
+        minSdkVersion 23
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -94,9 +94,11 @@ dependencies {
     // Firebase Authentication
     implementation 'com.google.firebase:firebase-auth:19.2.0'
     // Firestore for online database
-    implementation 'com.google.firebase:firebase-firestore:21.4.0'
+    implementation 'com.google.firebase:firebase-firestore:21.5.0'
     // coroutines support for firebase operations
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.1.1'
+    // This library transitively includes the firebase-firestore library
+    implementation 'com.google.firebase:firebase-firestore-ktx:21.5.0'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

@@ -1,14 +1,14 @@
-package sp.smart.smartpub.data.db
+package sp.smart.admin.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import sp.smart.smartpub.data.db.entity.Course
+import sp.smart.admin.db.entity.Course
 
 @Database(
     entities = [
     Course::class
     ],
-    version = 5
+    version = 1
 )
 abstract class SmartDatabase : RoomDatabase() {
 

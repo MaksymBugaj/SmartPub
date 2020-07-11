@@ -1,5 +1,6 @@
 package sp.smart.smartpub.ui.menu.classic.horizontalscrollviews
 
+import android.util.Log
 import androidx.lifecycle.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -10,6 +11,17 @@ import javax.inject.Inject
 class HorizontalViewModel @Inject constructor(
     private val smartRepository: SmartRepository
 ): ViewModel() {
+
+    init {
+        viewModelScope.launch(Dispatchers.IO) {
+            val fetched = smartRepository.fetchDataFromServer()
+            if(fetched) {
+                Log.d("NOPE","Fetched :) ")
+            } else {
+                Log.d("NOPE","Not Fetched :( ")
+            }
+        }
+    }
 
     private val _courses = MutableLiveData<List<Course>>()
     val courses : LiveData<List<Course>> = _courses

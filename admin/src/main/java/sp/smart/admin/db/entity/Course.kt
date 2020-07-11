@@ -1,10 +1,10 @@
-package sp.smart.smartpub.data.db.entity
+package sp.smart.admin.db.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
-@Entity(tableName = "course_table")
+@Entity(tableName = "course")
 data class Course(
     @PrimaryKey(autoGenerate = true)
     @SerializedName("id")

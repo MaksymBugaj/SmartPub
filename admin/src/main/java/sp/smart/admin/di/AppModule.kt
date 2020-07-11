@@ -1,16 +1,16 @@
-package sp.smart.smartpub.di
+package sp.smart.admin.di
 
 import android.app.Application
 import android.content.Context
 import androidx.room.Room
 import dagger.Module
 import dagger.Provides
-import sp.smart.smartpub.data.repository.SmartRepository
-import sp.smart.smartpub.data.repository.SmartRepositoryImpl
-import sp.smart.smartpub.data.db.CourseDao
-import sp.smart.smartpub.data.db.SmartDatabase
-import sp.smart.smartpub.data.repository.FirebaseRepository
-import sp.smart.smartpub.data.repository.FirebaseRepositoryImpl
+import sp.smart.admin.db.CourseDao
+import sp.smart.admin.db.SmartDatabase
+import sp.smart.admin.repository.FirebaseRepository
+import sp.smart.admin.repository.FirebaseRepositoryImpl
+import sp.smart.admin.repository.SmartRepository
+import sp.smart.admin.repository.SmartRepositoryImpl
 import javax.inject.Singleton
 
 @Module(includes = [ViewModelModule::class])
@@ -20,7 +20,7 @@ class AppModule {
     @Provides
     fun provideDb(app: Application): SmartDatabase {
         return Room.databaseBuilder(
-            app as Context, SmartDatabase::class.java,"smart.db"
+            app as Context, SmartDatabase::class.java,"smartAdmin.db"
         )
             .fallbackToDestructiveMigration()
             .build()
@@ -38,9 +38,11 @@ class AppModule {
         return SmartRepositoryImpl(courseDao, firebaseRepository)
     }
 
+
     @Singleton
     @Provides
     fun provideFirebaseRepository(): FirebaseRepository{
         return FirebaseRepositoryImpl()
     }
+
 }

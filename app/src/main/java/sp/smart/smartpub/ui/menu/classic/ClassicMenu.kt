@@ -47,7 +47,7 @@ class ClassicMenu : DaggerFragment() {
             classicMenuViewModel.category.set(item)
         }
 
-        initFirestore()
+
 
         classicMenuViewModel.coursesState.observe(this, Observer {
             if (it == null) return@Observer
@@ -61,29 +61,8 @@ class ClassicMenu : DaggerFragment() {
 
     }
 
-    private fun initFirestore() {
-        val db = FirebaseFirestore.getInstance()
 
-        // Create a new user with a first and last name
 
-        // Create a new user with a first and last name
-        val user: MutableMap<String, Any> = HashMap()
-        user["first"] = "Ada"
-        user["last"] = "Lovelace"
-        user["born"] = 1815
 
-// Add a new document with a generated ID
-
-// Add a new document with a generated ID
-        db.collection("users")
-            .add(user)
-            .addOnSuccessListener { documentReference ->
-                Log.d(
-                    TAG,
-                    "DocumentSnapshot added with ID: " + documentReference.id
-                )
-            }
-            .addOnFailureListener { e -> Log.w(TAG, "Error adding document", e) }
-    }
 
 }

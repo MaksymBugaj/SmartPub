@@ -1,4 +1,4 @@
-package sp.smart.smartpub.ui.menu.classic
+package sp.smart.admin.ui.add
 
 import android.util.Log
 import androidx.databinding.ObservableField
@@ -8,33 +8,20 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import sp.smart.smartpub.data.repository.SmartRepository
-import sp.smart.smartpub.data.db.entity.Course
+import sp.smart.admin.db.entity.Course
+import sp.smart.admin.repository.SmartRepository
 import javax.inject.Inject
 
-class ClassicMenuViewModel @Inject constructor(
+class AddCourseViewModel @Inject constructor(
     private val smartRepository: SmartRepository
-) : ViewModel() {
+): ViewModel() {
 
     val name = ObservableField<String>()
     val price = ObservableField<String>()
     val category = ObservableField<String>()
 
-    fun insert(course: Course){
-        viewModelScope.launch(Dispatchers.IO) {
-            smartRepository.insertCourse(course)
-        }
-    }
-
     private val _coursesState = MutableLiveData<CourseState>()
     val coursesState: LiveData<CourseState> = _coursesState
-
-    fun getAll(){
-        viewModelScope.launch(Dispatchers.IO) {
-            val courses = smartRepository.getAllCourses()
-
-        }
-    }
 
     fun onAddClick(){
         viewModelScope.launch(Dispatchers.IO) {
@@ -42,11 +29,13 @@ class ClassicMenuViewModel @Inject constructor(
             val course = Course(name = name.get()!!,price = price.get()!!,category = category.get()!!)
             smartRepository.insertCourse(course)
             val courseToFirestore = smartRepository.getCourseByName(course.name)
-
+            val inserted = smartRepository.saveDataInFirestore(courseToFirestore)
+            if(inserted) {
+                Log.d("NOPE","INSERTED")
+                _coursesState.postValue(CourseAdded)
+            }
         }
     }
-
-
 }
 
 sealed class CourseState
