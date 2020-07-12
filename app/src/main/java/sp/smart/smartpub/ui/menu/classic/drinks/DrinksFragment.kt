@@ -65,9 +65,11 @@ class DrinksFragment : DaggerFragment() {
         drinksViewModel.getCategorizesCourses("Drinks").observe(viewLifecycleOwner, Observer {
             if(it==null) return@Observer
 
-            listOfDrinks = it
-            (drinksRecyclerView.adapter as CoursesAdapter).setItems(listOfDrinks)
-
+            if(it.isNotEmpty()) {
+                drinksFragment_group_loading.visibility = View.GONE
+                listOfDrinks = it
+                (drinksRecyclerView.adapter as CoursesAdapter).setItems(listOfDrinks)
+            }
 
         })
     }

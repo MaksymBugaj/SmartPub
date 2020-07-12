@@ -7,6 +7,7 @@ import kotlinx.coroutines.tasks.await
 import sp.smart.admin.db.entity.Course
 
 class FirebaseRepositoryImpl : FirebaseRepository {
+
     override suspend fun saveDataInFirestore(course: Course): Boolean {
         val firestore = Firebase.firestore
         return try {

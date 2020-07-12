@@ -44,6 +44,11 @@ class AddCourseFragment : DaggerFragment() {
             addCourseViewModel.category.set(item)
         }
 
+        addCourse_submitButton.setOnClickListener {
+            addCourseFragment_group_loading.visibility = View.VISIBLE
+            Log.d("NOPE","addCourseButton")
+        }
+
 
         addCourseViewModel.coursesState.observe(this, Observer {
             if (it == null) return@Observer

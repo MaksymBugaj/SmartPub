@@ -65,9 +65,12 @@ class SoupsFragment : DaggerFragment() {
         soupsViewModel.getCategorizesCourses("Soups").observe(viewLifecycleOwner, Observer {
             if(it==null) return@Observer
 
-            listOfSoups = it
-            (soupsRecyclerView.adapter as CoursesAdapter).setItems(listOfSoups)
-
+            if(it.isNotEmpty()) {
+                Log.d("NOPE","Visibility change ${it.size}")
+                soupsFragment_group_loading.visibility = View.GONE
+                listOfSoups = it
+                (soupsRecyclerView.adapter as CoursesAdapter).setItems(listOfSoups)
+            }
 
         })
     }

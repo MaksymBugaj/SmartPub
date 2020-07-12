@@ -43,21 +43,6 @@ class ClassicMenu : DaggerFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        classicMenu_spinner.setOnSpinnerItemSelectedListener<String> { position, item ->
-            classicMenuViewModel.category.set(item)
-        }
-
-
-
-        classicMenuViewModel.coursesState.observe(this, Observer {
-            if (it == null) return@Observer
-
-            when (it) {
-                CourseAdded -> {
-                    findNavController().navigate(R.id.appetizersFragment)
-                }
-            }
-        })
 
     }
 

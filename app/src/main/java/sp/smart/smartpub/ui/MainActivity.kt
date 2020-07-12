@@ -26,7 +26,7 @@ class MainActivity : DaggerAppCompatActivity() {
 
     private fun setupNavigation(){
         navController = Navigation.findNavController(this, R.id.nav_host_fragment)
-        bottom_nav.setupWithNavController(navController)
+        //bottom_nav.setupWithNavController(navController)
     }
 
     private fun setupToolbar() {
@@ -34,9 +34,5 @@ class MainActivity : DaggerAppCompatActivity() {
         setSupportActionBar(toolbarLayout)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
-
-        toolbarLayout.setNavigationOnClickListener {
-            navController.navigate(R.id.classicMenu)
-        }
     }
 }

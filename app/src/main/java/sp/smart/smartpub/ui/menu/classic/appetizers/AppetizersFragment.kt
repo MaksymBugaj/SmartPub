@@ -66,11 +66,13 @@ class AppetizersFragment : DaggerFragment() {
     }
     private fun setupCourse(){
         appetizersViewModel.getCategorizesCourses("Appetizers").observe(viewLifecycleOwner, Observer {
-            if(it==null) return@Observer
+            if (it == null) return@Observer
 
+            if(it.isNotEmpty()) {
+            appetizersFragment_group_loading.visibility = View.GONE
             listOfAppetizers = it
             (appetizersRecyclerView.adapter as CoursesAdapter).setItems(listOfAppetizers)
-
+        }
 
         })
     }

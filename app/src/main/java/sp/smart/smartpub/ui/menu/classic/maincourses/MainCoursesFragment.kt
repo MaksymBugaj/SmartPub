@@ -70,9 +70,11 @@ class MainCoursesFragment : DaggerFragment() {
             Log.d("NOPE","observer mainCourses")
             if(it==null) return@Observer
 
-            listOfMainCourses = it
-            (mainCoursesRecyclerView.adapter as CoursesAdapter).setItems(listOfMainCourses)
-
+            if(it.isNotEmpty()) {
+                mainCoursesFragment_group_loading.visibility = View.GONE
+                listOfMainCourses = it
+                (mainCoursesRecyclerView.adapter as CoursesAdapter).setItems(listOfMainCourses)
+            }
 
         })
     }

@@ -12,28 +12,24 @@ class HorizontalViewModel @Inject constructor(
     private val smartRepository: SmartRepository
 ): ViewModel() {
 
-    init {
+    private val _firestoreDataStatus = MutableLiveData<FirebaseDataStatus>()
+    val firestoreDataStatus: LiveData<FirebaseDataStatus> = _firestoreDataStatus
+
+    fun onVisible() {
         viewModelScope.launch(Dispatchers.IO) {
             val fetched = smartRepository.fetchDataFromServer()
             if(fetched) {
                 Log.d("NOPE","Fetched :) ")
+                _firestoreDataStatus.postValue(DataDownloadSuccess)
             } else {
                 Log.d("NOPE","Not Fetched :( ")
+                _firestoreDataStatus.postValue(DataDownloadFailed)
             }
         }
     }
-
-    private val _courses = MutableLiveData<List<Course>>()
-    val courses : LiveData<List<Course>> = _courses
-
-    private fun getAllCourses(){
-        viewModelScope.launch(Dispatchers.IO) {
-            val coursesFromDb = smartRepository.getAllCourses()
-            _courses.postValue(coursesFromDb)
-        }
-    }
-
-    fun getCategorizesCourses(category:String): LiveData<List<Course>>{
-        return smartRepository.getCoursesByCategory(category)
-    }
 }
+
+sealed class FirebaseDataStatus
+
+object DataDownloadSuccess : FirebaseDataStatus()
+object DataDownloadFailed : FirebaseDataStatus()

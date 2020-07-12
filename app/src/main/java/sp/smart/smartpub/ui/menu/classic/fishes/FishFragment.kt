@@ -65,9 +65,11 @@ class FishFragment : DaggerFragment() {
         fishesViewModel.getCategorizesCourses("Fishes").observe(viewLifecycleOwner, Observer {
             if(it==null) return@Observer
 
-            listOfFishes = it
-            (fishessRecyclerView.adapter as CoursesAdapter).setItems(listOfFishes)
-
+            if(it.isNotEmpty()) {
+                fishesFragment_group_loading.visibility = View.GONE
+                listOfFishes = it
+                (fishessRecyclerView.adapter as CoursesAdapter).setItems(listOfFishes)
+            }
 
         })
     }

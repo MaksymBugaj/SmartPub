@@ -20,6 +20,7 @@
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:backgroundTint="@color/design_default_color_secondary_variant"
         app:menu="@menu/bottom_nav"/>
 
 </LinearLayout>
