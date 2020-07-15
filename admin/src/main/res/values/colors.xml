@@ -9,4 +9,5 @@
     <color name="dividerColor">#bdbdbd</color>
     <color name="whiteish">#f3f3f3</color>
     <color name="colorPrimaryDarkAlfa30">#80F57C00</color>
+    <color name="colorRed_900">#B71C1C</color>
 </resources>

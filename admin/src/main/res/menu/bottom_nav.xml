@@ -11,4 +11,9 @@
         android:id="@+id/addCourseFragment"
         android:icon="@drawable/ic_add_circle"
         android:title="Add course" />
+
+    <item
+        android:id="@+id/testFragment"
+        android:icon="@drawable/ic_add_circle"
+        android:title="TEST" />
 </menu>

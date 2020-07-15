@@ -41,12 +41,6 @@ class HorizontalFragment : DaggerFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        horizontalViewModel.firestoreDataStatus.observe(this, Observer {
-            if(it==null) return@Observer
-
-            //progressBar_loading.visibility = View.GONE
-        })
-
 
         Log.d("NOPE","in horizonGO")
     }

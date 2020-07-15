@@ -61,6 +61,14 @@ class MainCoursesFragment : DaggerFragment() {
                 Log.d("NOPE","click mainCourses")
                 showDialog(position)
             }
+
+            override fun onItemSelected(position: Int) {
+                Log.d("NOPE","check mainCourses")
+            }
+
+            override fun onItemDeselected(position: Int) {
+                Log.d("NOPE","uncheck mainCourses")
+            }
         })
 
 

@@ -5,7 +5,7 @@
 
     <data>
 
-        <import type="android.view.View"/>
+        <import type="android.view.View" />
 
         <variable
             name="viewmodel"
@@ -46,7 +46,7 @@
             android:id="@+id/group_background"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorPrimaryDarkAlfa30"/>
+            android:background="@color/colorPrimaryDarkAlfa30" />
 
         <androidx.constraintlayout.widget.Group
             android:id="@+id/addCourseFragment_groupInsert"
@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:visibility="@{viewmodel.spinnerVisibility ?  View.INVISIBLE : View.VISIBLE }"
-            app:constraint_referenced_ids="addCourse_spinner,addCourseLayout_name, addCourseLayout_price, addCourse_submitButton"
+            app:constraint_referenced_ids="addCourse_spinner,addCourseLayout_name, addCourseLayout_price, addCourse_submitButton,addCourseLayout_description"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -95,6 +95,7 @@
             android:focusableInTouchMode="true"
             app:endIconMode="custom"
             app:errorEnabled="true"
+            app:errorTextColor="@color/colorRed_900"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/addCourse_spinner">
@@ -111,6 +112,31 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addCourseLayout_description"
+            style="@style/TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:endIconMode="custom"
+            app:errorEnabled="true"
+            app:errorTextColor="@color/colorRed_900"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addCourseLayout_name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/addCourse_description"
+                style="@style/TextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="true"
+                android:hint="Description"
+                android:inputType="text"
+                android:text="@={viewmodel.description}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/addCourseLayout_price"
             style="@style/TextInputLayout"
@@ -118,9 +144,10 @@
             android:layout_height="wrap_content"
             app:endIconMode="custom"
             app:errorEnabled="true"
+            app:errorTextColor="@color/colorRed_900"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/addCourseLayout_name">
+            app:layout_constraintTop_toBottomOf="@id/addCourseLayout_description">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/addCourse_price"
@@ -129,12 +156,10 @@
                 android:layout_height="wrap_content"
                 android:enabled="true"
                 android:hint="Price"
-                android:inputType="numberDecimal"
+                android:inputType="numberSigned"
                 android:text="@={viewmodel.price}" />
 
         </com.google.android.material.textfield.TextInputLayout>
-
-
 
 
         <Button

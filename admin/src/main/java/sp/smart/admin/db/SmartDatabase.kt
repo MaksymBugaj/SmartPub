@@ -8,7 +8,8 @@ import sp.smart.admin.db.entity.Course
     entities = [
     Course::class
     ],
-    version = 1
+    version = 1,
+    exportSchema = false
 )
 abstract class SmartDatabase : RoomDatabase() {
 

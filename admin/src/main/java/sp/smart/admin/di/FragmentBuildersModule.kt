@@ -11,6 +11,5 @@ abstract class FragmentBuildersModule {
     @ContributesAndroidInjector
     abstract fun contributeAllCoursesFragment(): AllCoursesFragment
 
-    @ContributesAndroidInjector
-    abstract fun contributeAddCourseFragment(): AddCourseFragment
+
 }

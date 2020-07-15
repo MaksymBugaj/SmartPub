@@ -5,6 +5,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.tasks.await
 import sp.smart.admin.db.entity.Course
+import sp.smart.admin.network.NoConnectivityException
 
 class FirebaseRepositoryImpl : FirebaseRepository {
 
@@ -18,7 +19,10 @@ class FirebaseRepositoryImpl : FirebaseRepository {
                 .await()
             true
         } catch (e: Exception){
-            Log.d("NOPE","There is a problem :)")
+            Log.d("NOPE","There is a problem :) ${e.message}")
+            false
+        } catch (e: NoConnectivityException){
+            Log.d("NOPE","There is an net :) ${e.message}")
             false
         }
     }

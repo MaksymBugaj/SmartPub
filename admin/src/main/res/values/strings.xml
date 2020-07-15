@@ -6,6 +6,8 @@
     <string name="drinks">DRINKS</string>
     <string name="fish">FISHES</string>
     <string name="main_courses">MAIN COURSES</string>
+    <string name="no_connection">No internet connection</string>
+    <string name="no_connection_msg">There is a problem with your internet connection. Please check your internet settings</string>
 
     <string-array name="dish_category">
         <item>Appetizers</item>
@@ -14,4 +16,6 @@
         <item>Fishes</item>
         <item>Drinks</item>
     </string-array>
+
+    <string name="field_not_empty">This field must not be empty!</string>
 </resources>

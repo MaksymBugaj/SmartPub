@@ -8,7 +8,7 @@ import sp.smart.smartpub.data.db.entity.Course
     entities = [
     Course::class
     ],
-    version = 5
+    version = 6
 )
 abstract class SmartDatabase : RoomDatabase() {
 

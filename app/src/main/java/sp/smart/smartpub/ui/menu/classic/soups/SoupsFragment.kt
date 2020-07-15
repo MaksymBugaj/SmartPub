@@ -56,6 +56,15 @@ class SoupsFragment : DaggerFragment() {
         (soupsRecyclerView.adapter as CoursesAdapter).setOnClickListener(object: CoursesAdapter.OnItemClickListener{
             override fun onItemClick(position: Int, view: View) {
                 Log.d("NOPE","click soups")
+                sp.smart.smartpub.util.showDialog(listOfSoups[position], requireContext())
+            }
+
+            override fun onItemSelected(position: Int) {
+                Log.d("NOPE","check soups")
+            }
+
+            override fun onItemDeselected(position: Int) {
+                Log.d("NOPE","check soups")
             }
         })
 

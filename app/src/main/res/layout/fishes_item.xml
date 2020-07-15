@@ -39,7 +39,7 @@
             android:layout_marginStart="5dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/fishCourseItem_Image"
+            app:layout_constraintEnd_toStartOf="@id/fishCourseItem_check"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/fishCourseItem_topImage">
 
@@ -118,14 +118,13 @@
         </LinearLayout>
 
 
-        <ImageView
-            android:id="@+id/fishCourseItem_Image"
+        <CheckBox
+            android:id="@+id/fishCourseItem_check"
             style="@style/ButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_weight="1"
-            android:background="@drawable/favorite_border_24px"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/fishCourseItem_topImage" />

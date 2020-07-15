@@ -10,8 +10,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dagger.android.support.DaggerFragment
 import kotlinx.android.synthetic.main.add_course_fragment.*
+import kotlinx.coroutines.Deferred
 import sp.smart.admin.R
 import sp.smart.admin.databinding.AddCourseFragmentBinding
 import sp.smart.admin.viewmodel.ViewModelProviderFactory
@@ -44,22 +46,46 @@ class AddCourseFragment : DaggerFragment() {
             addCourseViewModel.category.set(item)
         }
 
-        addCourse_submitButton.setOnClickListener {
-            addCourseFragment_group_loading.visibility = View.VISIBLE
-            Log.d("NOPE","addCourseButton")
-        }
+
 
 
         addCourseViewModel.coursesState.observe(this, Observer {
             if (it == null) return@Observer
 
             Log.d("NOPE","COURSE ADDED!!!")
-//            when (it) {
-//                CourseAdded -> {
-//                    findNavController().navigate(R.id.appetizersFragment)
-//                }
-//            }
+            when (it) {
+                CourseAdded -> {
+                    findNavController().navigate(R.id.allCoursesFragment)
+                }
+                CourseNotAdded -> {
+                    Log.d("NOPE","No data")
+                }
+                InternetNotAvailable -> {
+                    addCourseViewModel.spinnerVisibility.set(false)
+                    showNoInternetDialog()
+
+                }
+                EmptyFields -> {
+                    addCourseLayout_name.error = resources.getString(R.string.field_not_empty)
+                    addCourseLayout_description.error = resources.getString(R.string.field_not_empty)
+                    addCourseLayout_price.error = resources.getString(R.string.field_not_empty)
+                }
+            }
         })
     }
 
+    private fun showNoInternetDialog(){
+        val builder = MaterialAlertDialogBuilder(requireContext(), R.style.AlertDialogMaterialTheme)
+        builder.setTitle(resources.getString(R.string.no_connection))
+        builder.setMessage(resources.getString(R.string.no_connection_msg))
+        builder.setNeutralButton("OK"){ dialog, which ->
+            dialog.dismiss()
+        }
+        builder.show()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        addCourseViewModel.onVisible()
+    }
 }

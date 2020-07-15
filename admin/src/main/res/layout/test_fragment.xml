@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.test.TestFragment">
+
+    <TextView
+        android:id="@+id/job1_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello" />
+
+    <TextView
+        android:id="@+id/job2_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello" />
+
+
+    <TextView
+        android:id="@+id/job3_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello" />
+
+    <TextView
+        android:id="@+id/job4_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello" />
+
+    <TextView
+        android:id="@+id/job5_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello" />
+
+
+    <TextView
+        android:id="@+id/job6_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello" />
+
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:id="@+id/job_progress_bar"
+        />
+
+
+
+    <Button
+        android:id="@+id/job1_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1JOB" />
+
+    <Button
+        android:id="@+id/job2_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2JOB" />
+
+    <Button
+        android:id="@+id/job3_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3JOB" />
+
+    <Button
+        android:id="@+id/job4_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4JOB" />
+
+    <Button
+        android:id="@+id/job5_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5JOB" />
+
+    <Button
+        android:id="@+id/job6_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="6JOB" />
+
+</LinearLayout>

@@ -30,7 +30,7 @@
                 android:layout_height="0dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/horizontalFragment_fab"
                 />
 
 
@@ -71,7 +71,22 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/fragmentContainer_fishes" />
+                app:layout_constraintTop_toBottomOf="@id/fragmentContainer_fishes"/>
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/horizontalFragment_fab"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:backgroundTint="@color/colorPrimaryDark"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/dividerColor"
+                android:text="ORDER"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|top"
+                app:icon="@drawable/ic_arrow_right"
+                android:contentDescription="@string/submit"
+                android:layout_margin="16dp" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

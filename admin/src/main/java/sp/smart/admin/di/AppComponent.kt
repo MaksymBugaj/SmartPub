@@ -14,7 +14,9 @@ import javax.inject.Singleton
         AndroidSupportInjectionModule::class,
         ActivityBuildersModule::class,
         AppModule::class,
-        ViewModelFactoryModule::class
+        ViewModelFactoryModule::class,
+        NetModule::class,
+        AddCourseModule::class
     ]
 )
 interface AppComponent : AndroidInjector<SmartOwner> {

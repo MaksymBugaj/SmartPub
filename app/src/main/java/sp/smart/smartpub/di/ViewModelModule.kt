@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModelProvider
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
-import sp.smart.smartpub.ui.menu.classic.ClassicMenuViewModel
 import sp.smart.smartpub.ui.menu.classic.all.AllViewModel
 import sp.smart.smartpub.ui.menu.classic.appetizers.AppetizersViewModel
 import sp.smart.smartpub.ui.menu.classic.drinks.DrinksViewModel
@@ -21,10 +20,7 @@ import sp.smart.smartpub.viewmodel.ViewModelProviderFactory
 abstract class ViewModelModule {
 
 
-    @Binds
-    @IntoMap
-    @ViewModelKey(ClassicMenuViewModel::class)
-    abstract fun bindClassicMenuViewModel(classicMenuViewModel: ClassicMenuViewModel): ViewModel
+
 
     @Binds
     @IntoMap

@@ -12,10 +12,7 @@ import sp.smart.admin.ui.all.AllCoursesViewModel
 abstract class ViewModelModule {
 
 
-    @Binds
-    @IntoMap
-    @ViewModelKey(AddCourseViewModel::class)
-    abstract fun bindAddCourseViewModel(addCourseViewModel: AddCourseViewModel): ViewModel
+
 
     @Binds
     @IntoMap

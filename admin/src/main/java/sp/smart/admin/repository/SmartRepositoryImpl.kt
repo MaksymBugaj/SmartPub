@@ -39,22 +39,21 @@ class SmartRepositoryImpl(
         return firebaseRepository.saveDataInFirestore(course)
     }
 
-    override suspend fun fetchDataFromServer(): Boolean {
-        return try {
+    override suspend fun fetchDataFromServer(): FirebaseStatus {
             val dataFromServer =  firebaseRepository.getDataFromFirestore()
             if(dataFromServer != null) {
                 for (course in dataFromServer){
                     insertCourseFromServer(course)
                 }
-                true
-            } else false
-        } catch (e: Exception){
-            Log.d("NOPE","There is a problem in fetch")
-            false
-        }
+                return FirebaseStatus.LOADED
+            } else return FirebaseStatus.NOT_LOADED
     }
 
     private fun insertCourseFromServer(course: Course){
         courseDao.insertCourse(course)
     }
+}
+
+enum class FirebaseStatus{
+    NO_INTERNET, LOADED, NOT_LOADED
 }

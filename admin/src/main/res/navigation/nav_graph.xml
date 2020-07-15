@@ -14,4 +14,9 @@
         android:id="@+id/addCourseFragment"
         android:name="sp.smart.admin.ui.add.AddCourseFragment"
         android:label="AddCourseFragment" />
+    <fragment
+        android:id="@+id/testFragment"
+        android:name="sp.smart.admin.ui.test.TestFragment"
+        android:label="test_fragment"
+        tools:layout="@layout/test_fragment" />
 </navigation>

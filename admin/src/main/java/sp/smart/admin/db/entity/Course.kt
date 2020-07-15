@@ -14,7 +14,9 @@ data class Course(
     @SerializedName("price")
     val price: String,
     @SerializedName("category")
-    val category: String
-){
-    constructor() : this(0,"","","")
+    val category: String,
+    @SerializedName("description")
+    val description: String
+) {
+    constructor() : this(0, "", "", "", "")
 }

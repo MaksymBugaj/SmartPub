@@ -1,140 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/soups_item_root"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    app:cardCornerRadius="5dp"
-    app:cardElevation="3dp"
-    app:cardUseCompatPadding="true">
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
 
+    </data>
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/soupsCourseItem_layout"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/soups_item_root"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="parent">
-
-        <ImageView
-            android:id="@+id/soupsCourseItem_topImage"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:fitsSystemWindows="true"
-            android:adjustViewBounds="true"
-            android:scaleType="centerCrop"
-            android:background="@drawable/soups"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+        android:orientation="vertical"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="3dp"
+        app:cardUseCompatPadding="true">
 
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/soupsCourseItem_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/soupsCourseItem_Image"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/soupsCourseItem_topImage">
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="parent">
+
+            <ImageView
+                android:id="@+id/soupsCourseItem_topImage"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:fitsSystemWindows="true"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:background="@drawable/soups"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
 
-            <TextView
-                android:id="@+id/soupsCourseItem_itemName"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-                android:textSize="22sp"
-                tools:text="Activity" />
+                android:layout_marginStart="5dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/soupsCourseItem_check"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/soupsCourseItem_topImage">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+
+                <TextView
+                    android:id="@+id/soupsCourseItem_itemName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:textSize="22sp"
+                    tools:text="Activity" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/soupsCourseItemLayout_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Price:"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/soupsCourseItem_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="@id/soupsCourseItem_description"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Some comment" />
+
+
+                    <TextView
+                        android:id="@+id/soupsCourseItemLayout_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Description"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="@id/soupsCourseItemLayout_price"
+                        app:layout_constraintTop_toBottomOf="@id/soupsCourseItemLayout_price" />
+
+                    <TextView
+                        android:id="@+id/soupsCourseItem_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="10dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toEndOf="@id/soupsCourseItemLayout_description"
+                        app:layout_constraintTop_toBottomOf="@id/soupsCourseItem_price"
+                        tools:text="Some comment" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+
+            <CheckBox
+                android:id="@+id/soupsCourseItem_check"
+                style="@style/ButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
 
-                <TextView
-                    android:id="@+id/soupsCourseItemLayout_price"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="5dp"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    android:text="Price:"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                    android:textSize="14sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/soupsCourseItem_price"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                    android:textSize="14sp"
-                    app:layout_constraintStart_toStartOf="@id/soupsCourseItem_description"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Some comment" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/soupsCourseItem_topImage" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-                <TextView
-                    android:id="@+id/soupsCourseItemLayout_description"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    android:text="Description"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                    android:textSize="14sp"
-                    app:layout_constraintStart_toStartOf="@id/soupsCourseItemLayout_price"
-                    app:layout_constraintTop_toBottomOf="@id/soupsCourseItemLayout_price" />
-
-                <TextView
-                    android:id="@+id/soupsCourseItem_description"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginStart="10dp"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                    android:textSize="14sp"
-                    app:layout_constraintStart_toEndOf="@id/soupsCourseItemLayout_description"
-                    app:layout_constraintTop_toBottomOf="@id/soupsCourseItem_price"
-                    tools:text="Some comment" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </LinearLayout>
-
-
-        <ImageView
-            android:id="@+id/soupsCourseItem_Image"
-            style="@style/ButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_weight="1"
-            android:background="@drawable/whatshot_24px"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/soupsCourseItem_topImage" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-</androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
+</layout>
 
     <!--
     <View

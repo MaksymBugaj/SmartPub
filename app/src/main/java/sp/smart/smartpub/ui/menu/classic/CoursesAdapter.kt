@@ -67,10 +67,6 @@ class CoursesAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         return listOfCourses.size
     }
 
-    /* override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-         holder.setItems(listOfCourses[position])
-     }*/
-
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when{
             getItemViewType(position) == APPETIZERS -> (holder as AppetizersViewHolder).setItems(listOfCourses[position])
@@ -96,6 +92,8 @@ class CoursesAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     interface OnItemClickListener {
         fun onItemClick(position: Int, view: View)
+        fun onItemSelected(position: Int)
+        fun onItemDeselected(position: Int)
     }
 
 
@@ -108,11 +106,16 @@ class CoursesAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         private val courseItemPrice: TextView = itemView.soupsCourseItem_price
         private val courseItemDescription: TextView = itemView.soupsCourseItem_description
         private val courseItemImage: CardView = itemView.soups_item_root
+        private val courseItemCheckBox = itemView.soupsCourseItem_check
 
         init {
             courseItemImage.setOnClickListener {
                 val position = adapterPosition
                 listener.onItemClick(position, it)
+            }
+
+            courseItemCheckBox.setOnCheckedChangeListener { _, isChecked ->
+                if(isChecked) listener.onItemSelected(adapterPosition) else listener.onItemDeselected(adapterPosition)
             }
         }
 
@@ -134,11 +137,16 @@ class CoursesAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         private val courseItemPrice: TextView = itemView.appetizerCourseItem_price
         private val courseItemDescription: TextView = itemView.appetizerCourseItem_description
         private val courseItemImage: CardView = itemView.appetizer_item_root
+        private val courseItemCheckBox = itemView.appetizerCourseItem_check
 
         init {
             courseItemImage.setOnClickListener {
                 val position = adapterPosition
                 listener.onItemClick(position, it)
+            }
+
+            courseItemCheckBox.setOnCheckedChangeListener { _, isChecked ->
+                if(isChecked) listener.onItemSelected(adapterPosition) else listener.onItemDeselected(adapterPosition)
             }
         }
 
@@ -160,11 +168,16 @@ class CoursesAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         private val courseItemPrice: TextView = itemView.mainCourseItem_price
         private val courseItemDescription: TextView = itemView.mainCourseItem_description
         private val courseItemImage: CardView = itemView.mainCourse_itemRoot
+        private val courseItemCheckBox = itemView.mainCourseItem_check
 
         init {
             courseItemImage.setOnClickListener {
                 val position = adapterPosition
                 listener.onItemClick(position, it)
+            }
+
+            courseItemCheckBox.setOnCheckedChangeListener { _, isChecked ->
+                if(isChecked) listener.onItemSelected(adapterPosition) else listener.onItemDeselected(adapterPosition)
             }
         }
 
@@ -186,11 +199,16 @@ class CoursesAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         private val courseItemPrice: TextView = itemView.fishCourseItem_price
         private val courseItemDescription: TextView = itemView.fishCourseItem_description
         private val courseItemImage: CardView = itemView.fish_item_root
+        private val courseItemCheckBox = itemView.fishCourseItem_check
 
         init {
             courseItemImage.setOnClickListener {
                 val position = adapterPosition
                 listener.onItemClick(position, it)
+            }
+
+            courseItemCheckBox.setOnCheckedChangeListener { _, isChecked ->
+                if(isChecked) listener.onItemSelected(adapterPosition) else listener.onItemDeselected(adapterPosition)
             }
         }
 
@@ -212,11 +230,16 @@ class CoursesAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         private val courseItemPrice: TextView = itemView.drinksCourseItem_price
         private val courseItemDescription: TextView = itemView.drinksCourseItem_description
         private val courseItemImage: CardView = itemView.drinks_item_root
+        private val courseItemCheckBox = itemView.drinksCourseItem_check
 
         init {
             courseItemImage.setOnClickListener {
                 val position = adapterPosition
                 listener.onItemClick(position, it)
+            }
+
+            courseItemCheckBox.setOnCheckedChangeListener { _, isChecked ->
+                if(isChecked) listener.onItemSelected(adapterPosition) else listener.onItemDeselected(adapterPosition)
             }
         }
 

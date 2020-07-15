@@ -58,6 +58,14 @@ class AllFragment : DaggerFragment() {
             override fun onItemClick(position: Int, view: View) {
                 Log.d("NOPE","click click")
             }
+
+            override fun onItemSelected(position: Int) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onItemDeselected(position: Int) {
+                TODO("Not yet implemented")
+            }
         })
     }
 

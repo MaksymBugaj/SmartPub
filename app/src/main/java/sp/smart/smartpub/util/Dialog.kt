@@ -12,7 +12,7 @@ fun showDialog(course:Course, context: Context){
     builder.setContentView(R.layout.dialog_layout)
     builder.item_name.text = course.name
     builder.item_price.text = course.price
-    builder.item_description.text = context.resources.getText(R.string.lorem)
+    builder.item_description.text = course.description
     builder.item_button.setOnClickListener {
         builder.cancel()
     }

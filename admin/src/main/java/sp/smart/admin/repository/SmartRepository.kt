@@ -17,5 +17,5 @@ interface SmartRepository {
 
     suspend fun saveDataInFirestore(course: Course): Boolean
 
-    suspend fun fetchDataFromServer(): Boolean
+    suspend fun fetchDataFromServer(): FirebaseStatus
 }

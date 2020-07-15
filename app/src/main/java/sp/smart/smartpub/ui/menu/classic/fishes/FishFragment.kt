@@ -56,6 +56,15 @@ class FishFragment : DaggerFragment() {
         (fishessRecyclerView.adapter as CoursesAdapter).setOnClickListener(object: CoursesAdapter.OnItemClickListener{
             override fun onItemClick(position: Int, view: View) {
                 Log.d("NOPE","click fishes")
+                sp.smart.smartpub.util.showDialog(listOfFishes[position], requireContext())
+            }
+
+            override fun onItemSelected(position: Int) {
+                Log.d("NOPE","check fishes")
+            }
+
+            override fun onItemDeselected(position: Int) {
+                Log.d("NOPE","uncheck fishes")
             }
         })
 
