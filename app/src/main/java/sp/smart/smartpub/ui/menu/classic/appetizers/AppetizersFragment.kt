@@ -28,6 +28,9 @@ class AppetizersFragment : DaggerFragment() {
     private val appetizersViewModel: AppetizersViewModel by viewModels {
         viewModelProviderFactory
     }
+    private val horizontalViewModel: HorizontalViewModel by viewModels {
+        viewModelProviderFactory
+    }
 
     private lateinit var appetizersRecyclerView: RecyclerView
     private lateinit var listOfAppetizers : List<Course>
@@ -64,6 +67,7 @@ class AppetizersFragment : DaggerFragment() {
 
             override fun onItemSelected(position: Int) {
                 Log.d("NOPE","check appetizersRecyclerView")
+                horizontalViewModel.checkClicks()
             }
 
             override fun onItemDeselected(position: Int) {

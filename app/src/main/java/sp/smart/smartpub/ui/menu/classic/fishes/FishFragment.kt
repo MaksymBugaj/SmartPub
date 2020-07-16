@@ -15,6 +15,7 @@ import kotlinx.android.synthetic.main.fish_fragment.*
 import sp.smart.smartpub.R
 import sp.smart.smartpub.data.db.entity.Course
 import sp.smart.smartpub.ui.menu.classic.CoursesAdapter
+import sp.smart.smartpub.ui.menu.classic.horizontalscrollviews.HorizontalViewModel
 import sp.smart.smartpub.viewmodel.ViewModelProviderFactory
 import javax.inject.Inject
 
@@ -24,6 +25,9 @@ class FishFragment : DaggerFragment() {
     lateinit var viewModelProviderFactory: ViewModelProviderFactory
 
     private val fishesViewModel: FishViewModel by viewModels {
+        viewModelProviderFactory
+    }
+    private val horizontalViewModel: HorizontalViewModel by viewModels {
         viewModelProviderFactory
     }
 
@@ -61,6 +65,7 @@ class FishFragment : DaggerFragment() {
 
             override fun onItemSelected(position: Int) {
                 Log.d("NOPE","check fishes")
+                horizontalViewModel.checkClicks()
             }
 
             override fun onItemDeselected(position: Int) {

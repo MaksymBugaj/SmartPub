@@ -21,16 +21,15 @@ abstract class ViewModelModule {
 
 
 
-
     @Binds
     @IntoMap
     @ViewModelKey(AllViewModel::class)
     abstract fun bindAllViewModel(allViewModel: AllViewModel): ViewModel
 
-    @Binds
+    /*@Binds
     @IntoMap
     @ViewModelKey(HorizontalViewModel::class)
-    abstract fun bindHorizontalViewModel(horizontalViewModel: HorizontalViewModel): ViewModel
+    abstract fun bindHorizontalViewModel(horizontalViewModel: HorizontalViewModel): ViewModel*/
 
     @Binds
     @IntoMap

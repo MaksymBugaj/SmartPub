@@ -27,6 +27,11 @@ class HorizontalViewModel @Inject constructor(
             }
         }
     }
+    var czujka6 = 0
+    fun checkClicks(){
+        Log.d("NOPE","Clicku clicku:  $czujka6")
+        czujka6++
+    }
 }
 
 sealed class FirebaseDataStatus

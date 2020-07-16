@@ -2,15 +2,18 @@ package sp.smart.smartpub.di
 
 import android.app.Application
 import android.content.Context
+import androidx.lifecycle.ViewModel
 import androidx.room.Room
 import dagger.Module
 import dagger.Provides
+import dagger.multibindings.IntoMap
 import sp.smart.smartpub.data.repository.SmartRepository
 import sp.smart.smartpub.data.repository.SmartRepositoryImpl
 import sp.smart.smartpub.data.db.CourseDao
 import sp.smart.smartpub.data.db.SmartDatabase
 import sp.smart.smartpub.data.repository.FirebaseRepository
 import sp.smart.smartpub.data.repository.FirebaseRepositoryImpl
+import sp.smart.smartpub.ui.menu.classic.horizontalscrollviews.HorizontalViewModel
 import javax.inject.Singleton
 
 @Module(includes = [ViewModelModule::class])
@@ -42,5 +45,13 @@ class AppModule {
     @Provides
     fun provideFirebaseRepository(): FirebaseRepository{
         return FirebaseRepositoryImpl()
+    }
+
+    @Singleton
+    @Provides
+    @IntoMap
+    @ViewModelKey(HorizontalViewModel::class)
+    fun bindHorizontalViewModel(horizontalViewModel: HorizontalViewModel): ViewModel{
+        return horizontalViewModel
     }
 }
